@@ -84,17 +84,17 @@ while q_show_pet_details != 'no':
             q_what_pet_detail = input(print('Which pet detail would you like to see? ')).lower()
             if q_what_pet_detail == 'name':
                 print(pet_list[q_what_pet-1].name)
-            if q_what_pet_detail == 'breed':
+            elif q_what_pet_detail == 'breed':
                 print(pet_list[q_what_pet-1].breed)
-            if q_what_pet_detail == 'owner':
+            elif q_what_pet_detail == 'owner':
                 q_what_owner_detail = input(print('Which owner detail would you like to see? ')).lower()
                 if q_what_owner_detail == 'name':
                     print(pet_list[q_what_pet-1].get_owner().name)
-                if q_what_owner_detail == 'phone':
+                elif q_what_owner_detail == 'phone':
                     print(pet_list[q_what_pet-1].get_owner().phone)
-                if q_what_owner_detail == 'email':
+                elif q_what_owner_detail == 'email':
                     print(pet_list[q_what_pet-1].get_owner().email)
-                if q_what_owner_detail == 'payment details':
+                elif q_what_owner_detail == 'payment details':
                     print(pet_list[q_what_pet-1].get_owner().payment_details)
         else:
             print('Not a valid input')
