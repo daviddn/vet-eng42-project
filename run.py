@@ -50,19 +50,20 @@ for pet in pet_list:
 print('                                                        PET 1                                 ')
 pet_1.print_pet_details()
 
+# Add pet
 q_add_pet = ''
 
 while q_add_pet != 'no':
-    q_add_pet = input(print('Would you like to add a pet? ')).lower()
+    q_add_pet = input('Would you like to add a pet? ').lower()
     if q_add_pet == 'no':
         print('Ok!')
     elif q_add_pet == 'yes':
-        q_name_pet = input(print('What is the name of the pet? ')).capitalize()
-        q_breed_pet = input(print('What is the breed of the pet? ')).capitalize()
-        q_owner_name = input(print('Who is the owner of the pet? ')).capitalize()
-        q_owner_phone = input(print('What is the phone of the owner? '))
-        q_owner_email = input(print('What is the email of the owner? ')).lower()
-        q_owner_payment_details = input(print('What are the payment details of the owner? '))
+        q_name_pet = input('What is the name of the pet? ').capitalize()
+        q_breed_pet = input('What is the breed of the pet? ').capitalize()
+        q_owner_name = input('Who is the owner of the pet? ').capitalize()
+        q_owner_phone = input('What is the phone of the owner? ')
+        q_owner_email = input('What is the email of the owner? ').lower()
+        q_owner_payment_details = input('What are the payment details of the owner? ')
         new_owner = Owner(q_owner_name, q_owner_phone, q_owner_email, q_owner_payment_details)
         new_pet = Pet(q_name_pet, q_breed_pet, new_owner)
         pet_list.append(new_pet)
@@ -72,22 +73,24 @@ while q_add_pet != 'no':
     else:
         print('Not a valid input')
 
+
+# Show pet details
 q_show_pet_details = ''
 
 while q_show_pet_details != 'no':
-    q_show_pet_details = input(print('Would you like to see details for a pet? ')).lower()
+    q_show_pet_details = input('Would you like to see details for a pet? ').lower()
     if q_show_pet_details == 'no':
         print('Bye!')
     elif q_show_pet_details == 'yes':
-        q_what_pet = int(input(print('Which pet would you like to see? Please input a number: ')))
+        q_what_pet = int(input('Which pet would you like to see? Please input a number: '))
         if q_what_pet <= len(pet_list):
-            q_what_pet_detail = input(print('Which pet detail would you like to see? ')).lower()
+            q_what_pet_detail = input('Which pet detail would you like to see? ').lower()
             if q_what_pet_detail == 'name':
                 print(pet_list[q_what_pet-1].name)
             elif q_what_pet_detail == 'breed':
                 print(pet_list[q_what_pet-1].breed)
             elif q_what_pet_detail == 'owner':
-                q_what_owner_detail = input(print('Which owner detail would you like to see? ')).lower()
+                q_what_owner_detail = input('Which owner detail would you like to see? ').lower()
                 if q_what_owner_detail == 'name':
                     print(pet_list[q_what_pet-1].get_owner().name)
                 elif q_what_owner_detail == 'phone':
