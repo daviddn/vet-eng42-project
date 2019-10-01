@@ -20,20 +20,36 @@ pet_3 = Pet('Cookie', 'Golden Retriever', owner_3)
 pet_4 = Pet('Pickles', 'Jack Russell', owner_1)
 
 # create 3 appointments
-app_1 = Appointment('01/10/19', 'Broken Ankle', pet_1, vet_1, '100£')
-app_2 = Appointment('02/10/19', 'Leg Cut', pet_2, vet_2, '50£')
-app_3 = Appointment('03/10/19', 'Rabies', pet_3, vet_3, '150£')
+appointment_1 = Appointment('01/10/19', 'Broken Ankle', pet_1, vet_1, '100£')
+appointment_2 = Appointment('02/10/19', 'Leg Cut', pet_2, vet_2, '50£')
+appointment_3 = Appointment('03/10/19', 'Rabies', pet_3, vet_3, '150£')
 
 # List of appointments
 appointment_list = []
-appointment_list.append(app_1)
-appointment_list.append(app_2)
-appointment_list.append(app_3)
+appointment_list.append(appointment_1)
+appointment_list.append(appointment_2)
+appointment_list.append(appointment_3)
 
 # Add pet to appointment
-app_1.add_pet_app(pet_4)
-print(app_1.app_details())
+appointment_1.add_pet_appointment(pet_4)
 
-# iterate over list of appointments and print
+# Iterate over list of appointments and print
+print('                                 APPOINTMENTS                                 ')
 for appointment in appointment_list:
-    print('Date: ' + appointment.get_date(), 'Illness: ' + appointment.get_illness(), 'Pet: ' + appointment.get_pet().identify_name(), 'Veterinary: ' + appointment.get_vet().identify_vet(), 'Price: ' + appointment.get_price())
+    print('Date: ' + appointment.date, '|Illness: ' + appointment.illness, '|Pet: ' + appointment.get_pet().name, '|Veterinary: ' + appointment.get_vet().name, '|Price: ' + appointment.price)
+
+# List of Pets
+pet_list = []
+pet_list.append(pet_1)
+pet_list.append(pet_2)
+pet_list.append(pet_3)
+pet_list.append(pet_4)
+
+# Iterate over list of pets and print
+print('                                                        PETS                                 ')
+for pet in pet_list:
+    print('Name: ' + pet.name, '|Breed: ' + pet.breed, pet.get_owner().identify_details())
+
+# List one pet and owner details
+print('                                                        PET 1                                 ')
+pet_1.print_pet_details()
